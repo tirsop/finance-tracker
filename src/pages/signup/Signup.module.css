@@ -17,3 +17,13 @@
   width: 100%;
   margin-bottom: 30px;
 }
+.signup-form div {
+  position: relative;
+}
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: 23%;
+  right: -5%;
+  padding: 1rem;
+}
