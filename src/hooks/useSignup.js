@@ -1,10 +1,11 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../context/AuthContext'
 // firebase imports
 import { auth } from '../firebase/config'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 export const useSignup = () => {
+  const [isCancelled, setIsCancelled] = useState(false) // if the component is unmounted (ex: user goes to another page) during the await, it will cause an error. For preventing that, we will "cancel" the operation.
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
   const { dispatch } = useContext(AuthContext)
@@ -17,15 +18,24 @@ export const useSignup = () => {
       if (!userCredential) throw new Error('Could not complete the signup.')
       console.log(userCredential.user);
       dispatch({ type: 'LOGIN', payload: userCredential.user })   // dispatch login action
-      setIsPending(false)
-      setError(null)
+      // update states
+      if (!isCancelled) {
+        setIsPending(false)
+        setError(null)
+      }
     }
     catch (err) {
-      console.log(err.message);
-      setError(err.message)
-      setIsPending(false)
+      if (!isCancelled) {
+        console.log(err.message);
+        setError(err.message)
+        setIsPending(false)
+      }
     }
   }
+
+  useEffect(() => {
+    return () => setIsCancelled(true)
+  }, [])
 
 
   return { error, isPending, signup }
