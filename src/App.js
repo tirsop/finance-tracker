@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
 // components
 import Navbar from "./components/Navbar";
 // pages
@@ -8,16 +10,20 @@ import Signup from './pages/signup/Signup'
 
 
 function App() {
+  const { authIsReady } = useContext(AuthContext)
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
+      {authIsReady && (
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </BrowserRouter>
+      )}
     </div>
   );
 }
