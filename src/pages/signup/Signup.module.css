@@ -27,3 +27,9 @@
   right: -5%;
   padding: 1rem;
 }
+.login-link {
+  margin-top: 16px;
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+}

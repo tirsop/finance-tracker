@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSignup } from '../../hooks/useSignup'
 import visibilityIcon from '../../assets/svg/visibilityIcon.svg'
@@ -49,6 +50,9 @@ export default function Signup() {
       {!isPending && <button className="btn">Signup</button>}
       {isPending && <button className='btn' disabled>...loading</button>}
       {error && <p>{error}</p>}
+
+      <Link className={styles['login-link']} to="/login">Already have an account?</Link>
+
     </form>
   )
 }
