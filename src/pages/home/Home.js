@@ -10,7 +10,7 @@ import styles from './Home.module.css'
 
 export default function Home() {
   const { user } = useContext(AuthContext)
-  const { data, isPending, error } = useCollection('transactions')
+  const { data, isPending, error } = useCollection('transactions', ["uid", "==", user.uid])
 
   return (
     <div className={styles.container}>
