@@ -10,14 +10,14 @@ import styles from './Home.module.css'
 
 export default function Home() {
   const { user } = useContext(AuthContext)
-  const { data, isPending, error } = useCollection()
+  const { data, isPending, error } = useCollection('transactions')
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         {error && <p>{error}</p>}
         {isPending && <p>Loading...</p>}
-        {data && <TransactionList transacions={data} />}
+        {data && <TransactionList transactions={data} />}
       </div>
       <div className={styles.sidebar}>
         <TransactionForm uid={user.uid} />
