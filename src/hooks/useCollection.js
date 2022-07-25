@@ -1,21 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { db } from "../firebase/config";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query, where } from "firebase/firestore";
 
-export const useCollection = (fbCollection, _fbQuery) => {
+export const useCollection = (fbCollection, _fbQuery, _fbOrderBy) => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
 
   // if we pass an array as dependency of useRef, arrays will be seen as "different" by useEffect, and in every function call and it will re-render infinitely.
   const fbQuery = useRef(_fbQuery).current
+  const fbOrderBy = useRef(_fbOrderBy).current
 
   useEffect(() => {
     let ref = collection(db, fbCollection)
 
-    if (fbQuery) {
-      ref = query(ref, where(...fbQuery));
-    }
+    if (fbQuery) ref = query(ref, where(...fbQuery))
+    if (fbOrderBy) ref = query(ref, orderBy(...fbOrderBy))
+
 
     setIsPending(true)
     const unsub = onSnapshot(ref, (snapshot) => {
@@ -39,7 +40,7 @@ export const useCollection = (fbCollection, _fbQuery) => {
     // unsuscribe on unmount
     return () => unsub()
 
-  }, [fbCollection, fbQuery])
+  }, [fbCollection, fbQuery, fbOrderBy])
 
   return { data, isPending, error }
 }

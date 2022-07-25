@@ -11,7 +11,11 @@ import styles from './Home.module.css'
 
 export default function Home() {
   const { user } = useContext(AuthContext)
-  const { data, isPending, error } = useCollection('transactions', ["uid", "==", user.uid])
+  const { data, isPending, error } = useCollection(
+    'transactions',
+    ["uid", "==", user.uid],      // display only transactions belonging to the user
+    ["createdAt", "desc"]         // order docs by creation date
+  )
 
   return (
     <div className={styles.container}>
