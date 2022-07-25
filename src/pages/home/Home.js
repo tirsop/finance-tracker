@@ -1,3 +1,5 @@
+// components
+import TransactionForm from './TransactionForm'
 // styles
 import styles from './Home.module.css'
 
@@ -9,7 +11,7 @@ export default function Home() {
 
       </div>
       <div className={styles.sidebar}>
-
+        <TransactionForm />
       </div>
     </div>
   )
