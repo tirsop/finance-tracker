@@ -14,6 +14,7 @@
 .navbar ul div {
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 .title {
   margin-right: auto;
@@ -21,6 +22,7 @@
   letter-spacing: 1px;
   font-size: 1.6em;
   color: #8704a6;
+  text-shadow: 1px 1px 0px #ff0000;
 }
 .navbar button, .navbar a {
   margin-left: 16px;
@@ -30,13 +32,17 @@
   text-decoration: none;
 }
 
-@media (max-width: 500px) {
-  .title {
-    margin: 0 0 16px;
-  }
+
+
+/* --------------- MEDIA_QUERIES--------------- */
+
+@media (max-width: 667px) {
   .navbar ul {
     text-align: center;
     display: flex;
     flex-direction: column;
+  }
+  .title {
+    margin: 0 0 16px;
   }
 }

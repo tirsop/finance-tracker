@@ -23,7 +23,7 @@ export default function Navbar() {
           )}
           {user &&
             <>
-              <li>Hello, {user.email}</li>
+              <li>Hello, {user.email.substring(0, user.email.indexOf('@'))}</li>
               <li><button className="btn" onClick={logout}>Logout</button></li>
             </>
           }

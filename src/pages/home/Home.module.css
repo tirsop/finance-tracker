@@ -59,7 +59,9 @@
 .sidebar aside li {
   margin: 10px;
 }
-
+.error {
+  text-align: center;
+}
 
 /* transactions */
 .transactions li {

@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {error && <p>{error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
         {isPending && <Spinner />}
         {data && <TransactionList transactions={data} />}
       </div>
