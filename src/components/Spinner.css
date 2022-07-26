@@ -1,3 +1,7 @@
+.lds-ring-flex {
+  display: flex;
+  justify-content: center;
+}
 .lds-ring {
   display: inline-block;
   position: relative;
@@ -8,7 +12,6 @@
   box-sizing: border-box;
   display: block;
   position: absolute;
-  top: 266px;
   width: 64px;
   height: 64px;
   margin: 8px;
