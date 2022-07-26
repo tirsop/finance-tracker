@@ -28,7 +28,7 @@ export default function TransactionList({ transactions }) {
       {transactions.length &&
         <li className={styles.total}>
           <p className={styles.name}>TOTAL: </p>
-          <p className={styles.amount}>{total}</p>
+          <p className={styles.amount}>¥ {total}</p>
         </li>
       }
     </ul>
