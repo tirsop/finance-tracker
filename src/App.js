@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Signup from './pages/signup/Signup'
+import Transactions from "./pages/transactions/Transactions";
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/" element={user ? <Home /> : <Navigate to='/login' />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/transactions" element={user ? <Transactions /> : <Navigate to='/login' />} />
             <Route path="/login" element={user ? <Navigate to='/' /> : <Login />} />
             <Route path="/signup" element={user ? <Navigate to='/' /> : <Signup />} />
           </Routes>

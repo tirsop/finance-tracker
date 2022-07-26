@@ -2,7 +2,7 @@
 // import { useEffect } from 'react'
 import { useFireStore } from '../../hooks/useFireStore'
 // styles
-import styles from './Home.module.css'
+import styles from './Transactions.module.css'
 
 export default function TransactionList({ transactions }) {
   const { deleteDocument } = useFireStore('transactions')
