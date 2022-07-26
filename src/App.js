@@ -21,8 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/transactions" element={user ? <Transactions /> : <Navigate to='/login' />} />
-            <Route path="/login" element={user ? <Navigate to='/' /> : <Login />} />
-            <Route path="/signup" element={user ? <Navigate to='/' /> : <Signup />} />
+            <Route path="/login" element={user ? <Navigate to='/transactions' /> : <Login />} />
+            <Route path="/signup" element={user ? <Navigate to='/transactions' /> : <Signup />} />
           </Routes>
         </BrowserRouter>
       )}

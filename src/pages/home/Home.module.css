@@ -1,0 +1,10 @@
+.devices img {
+  width: auto;
+  max-height: 500px;
+}
+
+.transacitions-link {
+  text-decoration: none;
+  display: inline-block;
+  margin: auto;
+}
