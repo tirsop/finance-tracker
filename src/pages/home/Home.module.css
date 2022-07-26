@@ -36,15 +36,20 @@
   color: #fff;
   border: 2px solid #fff;
   padding: 6px 12px;
-  background-color: transparent;
+  background: #1f9751;
   font-size: 1em;
   border-radius: 4px;
   cursor: pointer;
   display: block;
   width: 100%;
+  transition: all 0.2s;
+}
+.sidebar button:hover {
+  background: #187c42;
 }
 .sidebar h3 {
-  color: #1f9751;
+  /* color: #1f9751; */
+  color: #8704a6;
   margin-bottom: 20px;
 }
 .sidebar aside {
@@ -91,6 +96,10 @@
   line-height: 0;
   font-size: 0.9em;
   cursor: pointer;
+  transition: all 0.2s;
+}
+.transactions button:hover {
+  background: rgb(181, 181, 181);
 }
 
 /* --------------- MEDIA_QUERIES--------------- */
@@ -115,13 +124,16 @@
   .transactions li {
     margin: 24px auto;
   }
-  
+
   .transactions li :nth-of-type(1) { order: 1; }
   .transactions li :nth-of-type(2) { order: 2; }
 
 }
 
 @media (max-width: 500px) {
+  .container {
+    margin: 24px auto 60px;
+  }
   .transactions li {
     padding: 16px;
     margin: 16px auto;
