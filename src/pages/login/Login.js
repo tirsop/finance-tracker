@@ -21,7 +21,8 @@ export default function Login() {
       <h2>Login</h2>
 
       <label htmlFor="email">Email:</label>
-      <input type="text" id='email'
+      <input type="email" id='email'
+        required
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       // we set the email to whatever the user is typing by onChange. Also we set a value just in case we change this field from outside the input, so the input reflect that change too. So we have a 2 way binding and this is called a controlled input
@@ -29,6 +30,7 @@ export default function Login() {
 
       <label htmlFor="password">Password:</label>
       <input type="password" id='password'
+        required
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />

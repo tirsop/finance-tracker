@@ -22,9 +22,10 @@ export default function Signup() {
       <h2>Signup</h2>
 
       <label htmlFor="email">Email:</label>
-      <input type="text"
+      <input type="email"
+        required
         id='email'
-        placeholder='example@gmail.com'
+        // placeholder='example@gmail.com'
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       // we set the email to whatever the user is typing by onChange. Also we set a value just in case we change this field from outside the input, so the input reflect that change too. So we have a 2 way binding and this is called a controlled input
@@ -33,8 +34,9 @@ export default function Signup() {
       <div>
         <label htmlFor="password">Password:</label>
         <input type={showPassword ? 'text' : 'password'}
+          required
           id='password'
-          placeholder='somethingCompl1cated'
+          // placeholder='somethingCompl1cated'
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
