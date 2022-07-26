@@ -33,6 +33,7 @@ export const useCollection = (fbCollection, _fbQuery, _fbOrderBy) => {
         setError(null)
       }
     }, (err) => {
+      setIsPending(false)
       console.log(err);
       setError('We coundn\'t retrieve the data')
     })
