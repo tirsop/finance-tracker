@@ -23,6 +23,7 @@ export const useCollection = (fbCollection, _fbQuery, _fbOrderBy) => {
       if (snapshot.empty) {
         setError('No transactions to load.')
         setIsPending(false)
+        setData(null)
       } else {
         let results = []
         snapshot.docs.forEach(doc => {

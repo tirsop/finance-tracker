@@ -15,6 +15,7 @@
   padding: 20px;
   background: #1f9751;
   border-radius: 10px;
+  box-shadow: 1px 1px 20px -5px rgb(0, 0, 0, 50%);
 }
 .sidebar input, .sidebar select {
   display: block;
@@ -102,6 +103,10 @@
 }
 .transactions button:hover {
   background: rgb(181, 181, 181);
+}
+
+.transactions .total {
+  border-left: 8px solid #8704a6;
 }
 
 /* --------------- MEDIA_QUERIES--------------- */

@@ -36,8 +36,8 @@ export default function TransactionForm({ uid }) {
         </label>
 
         <label>
-          <span>Amount (¥):</span>
-          <input type="text"
+          <span>Cost (¥):</span>
+          <input type="number"
             required
             onChange={(e) => setAmount(e.target.value)}
             value={amount} />
