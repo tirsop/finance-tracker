@@ -21,14 +21,13 @@
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 1.6em;
-  color: #8704a6;
   text-shadow: 1px 1px 0px #ff0000;
 }
 .navbar button, .navbar a {
   margin-left: 16px;
 }
 .navbar a {
-  color: #333;
+  color: #8704a6;
   text-decoration: none;
 }
 

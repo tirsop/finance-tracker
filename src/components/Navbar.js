@@ -13,7 +13,11 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul>
-        <li className={styles.title}>myMoneyApp</li>
+        <li className={styles.title}>
+          <Link to="/">
+            myMoneyApp
+          </Link>
+        </li>
         <div>
           {!user && (
             <>
