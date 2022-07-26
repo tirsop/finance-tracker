@@ -14,7 +14,6 @@
 .navbar ul div {
   display: flex;
   align-items: center;
-  margin-left: 20px;
 }
 .title {
   margin-right: auto;
@@ -23,8 +22,10 @@
   font-size: 1.6em;
   text-shadow: 1px 1px 0px #ff0000;
 }
-.navbar button, .navbar a {
-  margin-left: 16px;
+.nav-flex {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 .navbar a {
   color: #8704a6;

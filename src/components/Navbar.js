@@ -18,7 +18,7 @@ export default function Navbar() {
             myMoneyApp
           </Link>
         </li>
-        <div>
+        <div className={styles['nav-flex']}>
           {!user && (
             <>
               <li><Link to="/login">Login</Link></li>
