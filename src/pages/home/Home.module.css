@@ -1,14 +1,15 @@
 .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 30px;
   max-width: 960px;
   margin: 60px auto;
 }
-.content {
-  padding-right: 30px;
-}
-.sidebar {
-  padding-left: 30px;
+.content { padding-left: 30px; }
+.sidebar { padding-right: 30px; }
+
+.sidebar h3 {
+  text-align: center;
 }
 .sidebar form {
   padding: 20px;
@@ -90,4 +91,43 @@
   line-height: 0;
   font-size: 0.9em;
   cursor: pointer;
+}
+
+/* --------------- MEDIA_QUERIES--------------- */
+@media (max-width: 667px) {
+  .container :nth-of-type(1) { order: 2; }
+  .container :nth-of-type(2) { order: 1; }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .content { padding: 0 20px; }
+  .sidebar { padding: 0 20px; }
+
+
+  .sidebar form,
+  .transactions li {
+    margin: auto;
+    max-width: 400px;
+  }
+
+  .transactions li {
+    margin: 24px auto;
+  }
+  
+  .transactions li :nth-of-type(1) { order: 1; }
+  .transactions li :nth-of-type(2) { order: 2; }
+
+}
+
+@media (max-width: 500px) {
+  .transactions li {
+    padding: 16px;
+    margin: 16px auto;
+  }
+  .transactions .name,
+  .transactions .amount {
+    font-size: 1.2em;
+  }
 }
