@@ -46,3 +46,11 @@ ul {
   background: #5e0272;
   color: #fff;
 }
+
+/* to make the footer stick to the top */
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
